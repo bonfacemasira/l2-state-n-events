@@ -4,7 +4,7 @@ export class CountDown extends React.Component{
 
     constructor(props){
         super(props)
-        this.state = {count: 100}
+        this.state = {count: 10}
     }
 
     componentDidMount(){
@@ -13,10 +13,11 @@ export class CountDown extends React.Component{
 
     update(){
         setInterval(() => {
-            let currentCount = this.state.count;
-            this.setState({count: currentCount - 1})
+            if (this.state.count > 0) {
+                let currentCount = this.state.count;
+                this.setState({count: currentCount - 1})
+            }
         }, 1000)
-        // this.setState({count: currentCount - 1})
     }
 
 
